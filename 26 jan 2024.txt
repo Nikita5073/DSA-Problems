@@ -1,0 +1,106 @@
+Linear search questions:-
+1.question:-
+#include<bits/stdc++.h>
+using namespace std;
+void linearSearch(int n,int arr[],int key,int index)
+{
+    int flag=-1;
+    for(int i=0;i<n;i++)
+    {
+        if(arr[i]==key)
+        {
+            flag=1;
+            index=i;
+            break;
+        }
+    }
+    if(flag==1)
+    {
+        cout<<"element found at position: "<<index<<" ";
+    }
+    else {
+        cout<<"-1"<<" ";
+    }
+}
+int main()
+{
+    int n;
+    cin>>n;
+    int arr[n]={15,20,45,85,65,55};
+    int key=85,index=-1;
+    linearSearch(n,arr,key,index);
+}
+----------------------------------------------------------------
+2.question:-
+#include<bits/stdc++.h>
+using namespace std;
+void linearSearch(int n,int arr[],int key)
+{
+    int count=0;
+    for(int i=0;i<n;i++)
+    {
+        if(arr[i]==key)
+        {
+            count++;
+        }
+    }
+    cout<<count<<" ";
+}
+int main()
+{
+    int n;
+    cin>>n;
+    int arr[n]={15,20,20,85,20,55};
+    int key=20;
+    linearSearch(n,arr,key);
+}
+-------------------------------------------------------------------------------------
+3.question:-
+#include<bits/stdc++.h>
+using namespace std;
+void Maximum(int n,int arr[],int max,int index)
+{
+    for(int i=0;i<n;i++)
+    {
+        if(max<arr[i])
+        {
+            max=arr[i];
+            index=i;
+        }
+    }
+    cout<<"position is: "<<index<<"\n";
+    cout<<"maximum element of array is: "<<max<<" ";
+}
+int main()
+{
+    int n;
+    cin>>n;
+    int arr[n]={15,20,20,85,20,55};
+    int max=arr[0],index=-1;
+    Maximum(n,arr,max,index);
+}
+------------------------------------------------------------------------------------------
+4.question:-
+#include<bits/stdc++.h>
+using namespace std;
+void Minimum(int n,int arr[],int min,int index)
+{
+    for(int i=0;i<n;i++)
+    {
+        if(min>arr[i])
+        {
+            min=arr[i];
+            index=i;
+        }
+    }
+    cout<<"position is: "<<index<<"\n";
+    cout<<"minimum element of array is: "<<min<<" ";
+}
+int main()
+{
+    int n;
+    cin>>n;
+    int arr[n]={15,20,25,45,35,10};
+    int min=arr[0],index=-1;
+    Minimum(n,arr,min,index);
+}
