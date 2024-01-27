@@ -1,0 +1,118 @@
+1.question:-
+#include<bits/stdc++.h>
+using namespace std;
+void first_occurence(int n,int arr[],int key,int index)
+{
+    int flag=0;
+    for(int i=0;i<n;i++)
+    {
+        if(arr[i]==key)
+        {
+            flag=1;
+            index=i;
+            break;
+        }
+    }
+   if(flag==1)
+   {
+       cout<<"index at first occurence: "<<index;
+   }
+}
+int main()
+{
+    int n;
+    cin>>n;
+    int arr[n]={15,20,25,45,20,20};
+    int key=20,index=-1;
+    first_occurence(n,arr,key,index);
+}
+------------------------------------------------------------------------------------------
+2.question:-
+#include<bits/stdc++.h>
+using namespace std;
+void last_occurence(int n,int arr[],int key,int index)
+{
+    int flag=0;
+    for(int i=0;i<n;i++)
+    {
+        if(arr[i]==key)
+        {
+            flag=1;
+            index=i;
+        }
+    }
+   if(flag==1)
+   {
+       cout<<"index at last occurence: "<<index;
+   }
+}
+int main()
+{
+    int n;
+    cin>>n;
+    int arr[n]={15,20,25,45,20,55};
+    int key=20,index=-1;
+    last_occurence(n,arr,key,index);
+}
+--------------------------------------------------------------------------------------------------
+3.question:-
+#include<bits/stdc++.h>
+using namespace std;
+void string_search(vector<string>str,int length,string key,int index)
+{
+    int flag=0;
+    for(int i=0;i<length;i++)
+    {
+        if(str[i]==key)
+        {
+            flag=1;
+            index=i;
+        }
+    }
+   if(flag==1)
+   {
+       cout<<"position of string is:  "<<index;
+   }
+   else
+   {
+       cout<<"-1";
+   }
+}
+int main()
+{
+    vector<string>str={"nikki","vishal","shruti","hitesh"};
+    int length=str.size();
+    string key="shruti";
+    int index=-1;
+    string_search(str,length,key,index);
+}
+-------------------------------------------------------------------------------------------------------------
+4.question:-
+#include<bits/stdc++.h>
+using namespace std;
+void char_search(char arr[],char key,int index)
+{
+    int flag=-1;
+    for(int i=0;i<6;i++)
+    {
+        if(arr[i]==key)
+        {
+            flag=1;
+            index=i;
+            break;
+        }
+    }
+    if(flag==1)
+    {
+        cout<<"character is at position number "<<index;
+    }
+}
+int main()
+{
+    char arr[6]={'a','b','c','d','e','f'};
+    char key='e';
+    int index=-1;
+    char_search(arr,key,index);
+    
+}
+----------------------------------------------------------------------------------------------------------------
