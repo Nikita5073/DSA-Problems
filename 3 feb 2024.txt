@@ -1,0 +1,135 @@
+1.question:-
+#include<bits/stdc++.h>
+using namespace std;
+void pallindrome(string str,int length)
+{
+    string str2=str;
+    int i=0,j=length-1;
+    while(i<=j)
+    {
+        swap(str2[i],str2[j]);
+        i++;
+        j--;
+    }
+    if(str==str2)
+    {
+        cout<<"it is pallindrome";
+    }
+    else 
+    {
+        cout<<"not a pallindrome";
+    }
+}
+int main()
+{
+   string str="nikki";
+   int length=str.size();
+   pallindrome(str,length);
+    return 0;
+}
+--------------------------------------------------------------------------------
+2.question:-
+#include<bits/stdc++.h>
+using namespace std;
+int missing_num(int arr[],int length)
+{
+    int sum=0;
+    for(int i=0;i<length;i++)
+    {
+        if(arr[i]>0)
+        {
+            sum+=i;
+        }
+    }
+    return sum;
+}
+int main()
+{
+   int arr[]={5,-1,4,-2,3,1};
+   int length=(sizeof(arr)/sizeof(arr[0]));
+   int s=missing_num(arr,length);
+   cout<<s<<endl;
+   int count=0;
+   for(int i=0;i<length;i++)
+   {
+       if(arr[i]>0)
+       {
+           count++;
+       }
+   }
+   cout<<count<<endl;
+   
+   int sum1=0;
+   for(int i=0;i<=count+1;i++)
+   {
+       sum1+=i;
+   }
+   cout<<sum1<<endl;
+   cout<<"missing number is: "<<sum1-s;
+    return 0;
+}
+--------------------------------------------------------------------
+3.question:-
+#include<bits/stdc++.h>
+using namespace std;
+void reverse_search(int arr[],int key,int n)
+{
+    int flag=-1,index=-1;
+    for(int i=(n-1);i>=0;i--)
+    {
+        if(arr[i]==key)
+        {
+            flag=1;
+            index=i;
+            break;
+        }
+    }
+    if(flag==1)
+    {
+        cout<<"index of key element is: "<<index;
+    }
+}
+int main()
+{
+    int n;
+    cin>>n;
+    int arr[n]={4,6,7,5,3,1};
+    int key=5;
+    
+    reverse_search(arr,key,n);
+    return 0;
+}
+---------------------------------------------------------------------------
+4.question:-
+#include<bits/stdc++.h>
+using namespace std;
+void even_odd_separation(int arr[],int length)
+{
+    int arr1[length];
+    int j=0,k=length-1;
+    for(int i=0;i<length;i++)
+    {
+        if(arr[i]%2==0)
+        {
+            arr1[j]=arr[i];
+            j++;
+        }
+        else 
+        {
+            arr1[k]=arr[i];
+            k--;
+        }
+    }
+    for(int i=0;i<length;i++)
+    {
+        cout<<arr1[i]<<" ";
+    }
+}
+int main()
+{
+    int arr[]={24,29,65,48,124};
+    int length=(sizeof(arr)/sizeof(arr[0]));
+    even_odd_separation(arr,length);
+    return 0;
+    
+}
