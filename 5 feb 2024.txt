@@ -1,0 +1,166 @@
+1.question:-
+#include<bits/stdc++.h>
+using namespace std;
+bool isprime(int num)
+{
+    if(num<=1)
+    {
+        return false;
+    }
+    for(int i=2;i<=(num/2);i++)
+    {
+        if(num%i==0)
+        {
+            return false;
+        }
+    }
+    return true;
+    
+}
+int main()
+{
+    int number;
+    cin>>number;
+    cout<<number;
+    if(isprime(number))
+    {
+        cout<<"is a prime number"<<endl;
+    }
+    else 
+    {
+        cout<<"is not a prime number"<<endl;
+    }
+}
+------------------------------------------------------------------
+2.questions:-
+#include<bits/stdc++.h>
+using namespace std;
+void vowel_or_consonant(char l)
+{
+    if(l=='a' || l=='e' || l=='i' || l=='o' || l=='u')
+    {
+        cout<<"vowel";
+    }
+    else {
+        cout<<"consonant";
+    }
+}
+int main()
+{
+    char l;
+    cin>>l;
+    vowel_or_consonant(l);
+    
+}
+----------------------------------------------------------------------------
+3.question:-Student Record Search Given a list of student records with names and scores, perform a linear search to find
+the record of a specific student by name. If the student is not in the list, return a message indicating that the student was
+not found.
+
+#include<bits/stdc++.h>
+using namespace std;
+class Student 
+{
+public:
+    string name;
+    int score;
+
+  
+    Student(string n,int s) : name(n), score(s) {}
+};
+
+Student* linearSearch(vector<Student>&students,string&targetName) 
+{
+    for(const auto& student : students) 
+    {
+        if(student.name==targetName) 
+        {
+            return const_cast<Student*>(&student);
+        }
+    }
+
+    return nullptr;
+}
+
+int main() 
+{
+    vector<Student>studentRecords = {
+        {"Alice", 90},
+        {"Bob", 85},
+        {"Charlie", 95},
+        {"David", 88},
+    };
+
+    string targetStudentName;
+    cout << "Enter the name of the student to search for: ";
+    cin >> targetStudentName;
+
+   
+    Student* foundStudent = linearSearch(studentRecords, targetStudentName);
+
+    
+    if (foundStudent != nullptr) 
+    {
+        std::cout << "Student found - Name: " << foundStudent->name << ", Score: " << foundStudent->score << std::endl;
+    } else {
+        std::cout << "Student not found." << std::endl;
+    }
+
+    return 0;
+}
+
+
+
+
+--------------------------------------------------------------------------------
+4.question:-
+#include<bits/stdc++.h>
+using namespace std;
+void consecutive_num(int arr[],int n)
+{
+    if(n==1)
+    {
+        cout<<"longest consecutive sequence is: 1"<<endl;
+    }
+    for(int i=0;i<n-1;i++)
+    {
+        for(int j=0;j<n-1-i;j++)
+        {
+            if(arr[j]>arr[j+1])
+            {
+                swap(arr[j],arr[j+1]);
+            }
+        }
+    }
+    for(int i=0;i<n;i++)
+    {
+        cout<<arr[i]<<" ";
+    }
+    int count=1;
+    int max_count=-1;
+    for(int i=0;i<n-1;i++)
+    {
+        if(arr[i+1]-arr[i]==1)
+        {
+            count++;
+        }
+        else if(arr[i+1]-arr[i]==0)
+        {
+            continue;
+        }
+        else 
+        {
+            count=1;
+        }
+        max_count=std::max(max_count,count);
+    }
+    cout<<"longes consecutive sequence is: "<<max_count<<endl;
+}
+int main()
+{
+    int n;
+    cin>>n;
+    int arr[n]={34,1,67,3,2,4};
+    consecutive_num(arr,n);
+    
+}
